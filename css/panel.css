@@ -1,0 +1,10 @@
+#about_options span,
+#sponsors_options span,
+#contact_options span,
+#schedule_options span,
+#slider_options span,
+#speaker_options span,
+#registration_options span {
+    background: url("../images/tabarrow.png") no-repeat scroll 10px 0 transparent;
+    text-indent: 15px;
+}

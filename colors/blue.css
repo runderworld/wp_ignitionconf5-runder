@@ -1,0 +1,38 @@
+/* GLOBAL: #Blue
+================================================== */
+
+a, a:visited,
+a:focus {
+	color: #5388ff;
+}
+
+a:hover { color: #3a32ff; }
+
+#navigation > li > .btn.register,
+#navigation > li > .btn.register:visited,
+#btop, #btop:visited,
+.flex-direction-nav .flex-next,
+.flex-direction-nav .flex-prev,
+input[type=submit],
+.btn, .btn:visited,
+.wpcf7 input[type=submit] {
+	background-color: #5388ff;
+}
+
+#navigation > li > .btn.register,
+#navigation > li > .btn.register:visited,
+#btop, #btop:visited,
+input[type=submit],
+.btn, .btn:visited,
+.wpcf7 input[type=submit] {
+	color: #FFF;
+}
+
+#navigation > li > .btn.register:hover,
+#btop:hover,
+input[type=submit]:hover,
+.btn:hover,
+.wpcf7 input[type=submit]:hover{
+	background: #5d55ff;
+}
+
