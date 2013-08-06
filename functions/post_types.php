@@ -9,6 +9,7 @@ function ci_load_custom_post_type_files()
 	$cpt_files = apply_filters('load_custom_post_type_files', array(
 		'functions/post_types/slider',
 		'functions/post_types/speakers',
+		'functions/post_types/keynotes',
 		'functions/post_types/sponsors'
 	));
 	foreach($cpt_files as $cpt_file) get_template_part($cpt_file);

@@ -1,4 +1,4 @@
-<?php if ( !ci_setting('disable_schedule_section') ) : ?>
+<?php if ( !ci_setting('disable_sponsors_section') ) : ?>
 	<section id="sponsors">
 		<div class="row">
 			<h1 class="section-title"><span><?php ci_e_setting('sponsors_title'); ?></span></h1>

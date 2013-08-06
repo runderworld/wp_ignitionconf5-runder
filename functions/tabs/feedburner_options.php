@@ -1,7 +1,7 @@
 <?php global $ci, $ci_defaults, $load_defaults; ?>
 <?php if ($load_defaults===TRUE): ?>
 <?php
-	add_filter('ci_panel_tabs', 'ci_add_tab_feedburner_options', 130);
+	add_filter('ci_panel_tabs', 'ci_add_tab_feedburner_options', 140);
 	if( !function_exists('ci_add_tab_feedburner_options') ):
 		function ci_add_tab_feedburner_options($tabs) 
 		{ 

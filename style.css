@@ -1,3 +1,4 @@
+
 /*
 Theme Name: IgnitionConf
 Theme URI: http://www.cssigniter.com/ignite/themes/ignitionconf
@@ -460,6 +461,7 @@ body {
 
 #about,
 #speakers,
+#keynotes,
 #schedule,
 #sponsors,
 #contact {
@@ -468,6 +470,7 @@ body {
 
 #about:after,
 #speakers:after,
+#keynotes:after,
 #sponsors:after {
 	content: " ";
 	display: block;
@@ -487,7 +490,7 @@ body {
 .section-title span {
 	display: inline-block;
 	padding: 0 5px 10px;
-	border-bottom: 3px double #3E3E3E;
+	border-bottom: 3px double #DDD;
 }
 
 section:first-of-type {
@@ -663,6 +666,68 @@ section:last-of-type {
 	margin-bottom: 5px;
 }
 
+/* -----------------------------------------
+   KEYNOTES SECTION
+----------------------------------------- */
+
+.keynote {
+	position: relative;
+	margin-bottom: 30px;
+	cursor: help;
+}
+
+.keynote-pres {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.keynote img,
+.keynote-pres img{
+	border-radius: 2px;
+	display: block;
+	line-height: 0;
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+.keynote-thumb {
+	/*width: 100%;*/
+}
+
+.keynote-thumb > img {
+	max-width: 214px;
+}
+
+.keynote-desc {
+	padding: 0;
+	display:none;
+	max-width: 100%;
+	max-height: 100%;
+	overflow-y: hidden;
+}
+
+.keynote h3,
+.keynote-pres h3{
+	bottom: 0;
+	font-size: 12px;
+	font-weight: 600;
+	color: #FFF;
+	text-align: center;
+	padding: 10px;
+	font-style: normal;
+	width: 100%;
+	background: rgba(0,0,0,0.7);
+	margin: -40px 0 0 0;
+	z-index: 10;
+	position: relative;
+	height: 40px;
+	opacity: 0;
+}
+
+.keynote-title {
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
 /* QTip Styles */
 
 .qtip {
@@ -695,7 +760,7 @@ section:last-of-type {
 .mCustomScrollBox > .mCSB_scrollTools { opacity: 0; }
 
 /* -----------------------------------------
-   SCHEDULE SECTION
+   (OLD) SCHEDULE SECTION
 ----------------------------------------- */
 
 .presentation {
@@ -722,6 +787,18 @@ section:last-of-type {
 	font-weight: 500;
 	font-size: 12px;
 	margin-bottom: 10px;
+}
+
+/* -----------------------------------------
+   SCHEDULE SECTION
+----------------------------------------- */
+
+.schedule-text {
+	color: #FFF;
+}
+
+.schedule-text p:last-of-type {
+	margin-bottom: 0;
 }
 
 /* -----------------------------------------

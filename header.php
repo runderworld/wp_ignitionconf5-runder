@@ -63,7 +63,7 @@
 						<?php if ( ci_setting('eventbrite_id') ) : ?>
 							<li><a class="btn register" href="<?php echo 'http://www.eventbrite.com/event/' . ci_setting('eventbrite_id') . '?ref=ebtn'; ?>"><?php ci_e_setting('button_text'); ?></a></li>
 						<?php else : ?>
-							<li><a class="btn register scroll" href="#contact"><?php ci_e_setting('button_text'); ?></a></li>
+							<li><a class="lbp_secondary btn register scroll" rel="lightbox[secondary-demo]" href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=NBNuH7SDjNJKXlFv/F/0Xw==&cCode=gu6bxUwJSpiBDyiUOfUi2A=="><?php ci_e_setting('button_text'); ?></a></li>
 						<?php endif; ?>
 					<?php endif; ?>
 

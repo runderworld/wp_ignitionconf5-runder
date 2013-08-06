@@ -52,7 +52,6 @@ function ci_update_cpt_speaker_meta($post_id){
 
 	if (isset($_POST['post_type']) && $_POST['post_type'] == "speaker")
 	{
-		update_post_meta($post_id, "ci_cpt_speaker_on_schedule", (isset($_POST["ci_cpt_speaker_on_schedule"]) ? $_POST["ci_cpt_speaker_on_schedule"] : '') );
 		update_post_meta($post_id, "ci_cpt_speaker_pres_title", (isset($_POST["ci_cpt_speaker_pres_title"]) ? $_POST["ci_cpt_speaker_pres_title"] : '') );
 		update_post_meta($post_id, "ci_cpt_speaker_pres_desc", (isset($_POST["ci_cpt_speaker_pres_desc"]) ? $_POST["ci_cpt_speaker_pres_desc"] : '') );
 		update_post_meta($post_id, "ci_cpt_speaker_pres_time", (isset($_POST["ci_cpt_speaker_pres_time"]) ? $_POST["ci_cpt_speaker_pres_time"] : '') );
@@ -63,7 +62,6 @@ endif;
 if( !function_exists('ci_add_cpt_speaker_meta_box') ):
 function ci_add_cpt_speaker_meta_box(){
 	global $post;
-	$on_schedule = get_post_meta($post->ID, 'ci_cpt_speaker_on_schedule', true);
 	$pres_title = get_post_meta($post->ID, 'ci_cpt_speaker_pres_title', true);
 	$pres_desc = get_post_meta($post->ID, 'ci_cpt_speaker_pres_desc', true);
 	$pres_time = get_post_meta($post->ID, 'ci_cpt_speaker_pres_time', true);
@@ -82,11 +80,6 @@ function ci_add_cpt_speaker_meta_box(){
 	<p>
 		<label for="ci_cpt_speaker_pres_desc"><?php _e('Presentation Description:', 'ci_theme'); ?></label>
 		<textarea id="ci_cpt_speaker_pres_desc" cols="40" rows="2" class="widefat" name="ci_cpt_speaker_pres_desc"><?php echo esc_attr($pres_desc); ?></textarea>
-	</p>
-
-	<p>
-		<input type="checkbox" id="ci_cpt_speaker_on_schedule" name="ci_cpt_speaker_on_schedule" value="on_schedule" <?php checked($on_schedule, 'on_schedule'); ?> /> 
-		<label for="ci_cpt_speaker_on_schedule"><?php _e('Show this speaker on the Schedule.', 'ci_theme'); ?></label>
 	</p>
 	<?php
 }

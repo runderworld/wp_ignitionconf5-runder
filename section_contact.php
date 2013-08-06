@@ -1,4 +1,4 @@
-<?php if ( !ci_setting('disable_schedule_section') ) : ?>
+<?php if ( !ci_setting('disable_contact_section') ) : ?>
 	<section id="contact">
 		<div class="row">
 			<h1 class="section-title"><span><?php ci_e_setting('contact_title'); ?></span></h1>

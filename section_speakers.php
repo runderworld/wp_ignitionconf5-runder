@@ -5,21 +5,28 @@
 
 			<?php $spk_q = new WP_Query( array(
 				'post_type'=>'speaker',
-				'posts_per_page' => -1
+				'posts_per_page' => -1,
+				'order' => 'ASC'
 			)); ?>
 
 			<?php if ( $spk_q->have_posts() ) : while ( $spk_q->have_posts() ) : $spk_q->the_post(); ?>
-				<article class="speaker <?php ci_e_setting('speaker_columns'); ?> mobile-two columns">
-					<div class="speaker-thumb">
-						<?php the_post_thumbnail('square'); ?>
-						<h3><?php the_title(); ?></h3>
-					</div>
-					<div class="speaker-desc">
-						<p class="speaker-title"><strong><?php the_title(); ?></strong></p>
-						<?php the_content(); ?>
-					</div>
-				</article>
-			<?php endwhile; endif; wp_reset_postdata(); ?>
+				<div class="twelve columns p-wrap">
+					<article class="presentation">
+						<div class="row">
+							<div class="speaker-pres two columns">
+								<?php the_post_thumbnail('square'); ?>
+								<h3><?php the_title(); ?></h3>
+							</div>
+							<div class="desc nine columns">
+								<h1><?php echo post_custom('ci_cpt_speaker_pres_title'); ?></h1>
+								<?php echo wpautop(post_custom('ci_cpt_speaker_pres_desc')); ?>
+							</div>
+						</div>
+					</article>
+				</div>
+			<?php endwhile; endif; // speaker loop ?>
+
+			<?php wp_reset_postdata(); ?>
 
 		</div> <!-- .row < #speakers -->
 	</section> <!-- #speakers -->

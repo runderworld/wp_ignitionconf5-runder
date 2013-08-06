@@ -1,7 +1,7 @@
 <?php global $ci, $ci_defaults, $load_defaults, $content_width; ?>
 <?php if ($load_defaults===TRUE): ?>
 <?php
-	add_filter('ci_panel_tabs', 'ci_add_tab_display_options', 90);
+	add_filter('ci_panel_tabs', 'ci_add_tab_display_options', 100);
 	if( !function_exists('ci_add_tab_display_options') ):
 		function ci_add_tab_display_options($tabs) 
 		{ 

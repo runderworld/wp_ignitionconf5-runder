@@ -38,6 +38,7 @@ jQuery(window).on("load", function() {
 	jQuery(window).on("resize", centerSlider);
 
 	var $speaker = jQuery(".speaker");
+	var $keynote = jQuery(".keynote");
 
 	function initQtip(tooltipWidth, tooltipHeight, yPos) {
 		$speaker.each(function() {
@@ -86,8 +87,58 @@ jQuery(window).on("load", function() {
 					}
 				}
 			});
-		});
-	}
+		}); // end: $speaker.each()
+	} // end: function initQtip()
+	
+	function initQtipKeynote(tooltipWidth, tooltipHeight, yPos) {		
+		$keynote.each(function() {
+			var that = jQuery(this);
+			that.qtip({
+				show: {
+					event: 'click',
+					solo: true
+				},
+				hide: {
+					event: 'unfocus'
+				},
+				content: jQuery(this).find(".keynote-desc").clone(),
+				position: {
+					my: 'left center',
+					at: 'right center',
+					target: that,
+					viewport: jQuery("#keynotes").find(".row"),
+					adjust: {
+						x: 6,
+						y: -yPos,
+						screen: true,
+						target: jQuery(document),
+						resize: false
+					}
+				},
+				style: {
+					classes: 'qtip-dark qtip-shadow qtip-rounded',
+					width: tooltipWidth,
+					height: tooltipHeight,
+					tip: {
+						mimic: 'center',
+						height: 4,
+						width: 10,
+						border: 4
+					}
+				},
+				events: {
+					visible: function(event, api) {
+						jQuery(this).find(".keynote-desc").mCustomScrollbar();
+						jQuery('.mCustomScrollBox > .mCSB_scrollTools').animate({opacity: 1});
+					},
+					hidden: function(event, api) {
+						jQuery(this).qtip('destroy');
+						jQuery(this).find(".keynote-desc").mCustomScrollbar('destroy');
+					}
+				}
+			});
+		}); // end: $keynote.each()
+	} // end: function initQtipKeynote()
 
 	$speaker.click(function() {
 		var tooltipWidth = (($speaker.outerWidth())*2) - ($speaker.outerWidth() - $speaker.width()) + 2,
@@ -96,12 +147,26 @@ jQuery(window).on("load", function() {
 
 		initQtip(tooltipWidth, tooltipHeight, yPos);
 	});
+	
+	$keynote.click(function() {
+		var tooltipWidth = (($keynote.outerWidth())*2) - ($keynote.outerWidth() - $keynote.width()) + 2,
+				tooltipHeight = $keynote.height()+ 2,
+				yPos = jQuery("#header").outerHeight()-4;
 
-	var tooltipWidth = (($speaker.outerWidth())*2) - ($speaker.outerWidth() - $speaker.width()) + 2,
-			tooltipHeight = $speaker.height()+ 2,
-			yPos = jQuery("#header").outerHeight()-4;
+		initQtipKeynote(tooltipWidth, tooltipHeight, yPos);
+	});
+
+	var tooltipWidth = (($speaker.outerWidth()) * 2) - ($speaker.outerWidth() - $speaker.width()) + 2,
+			tooltipHeight = $speaker.height() + 2,
+			yPos = jQuery("#header").outerHeight() - 4;
 
 	initQtip(tooltipWidth, tooltipHeight, yPos);
+	
+	// Now do the same for keynotes
+	tooltipWidth = (($keynote.outerWidth()) * 2) - ($keynote.outerWidth() - $keynote.width()) + 2;
+	tooltipHeight = $keynote.height() + 2;
+	
+	initQtipKeynote(tooltipWidth, tooltipHeight, yPos);
 
 	/* -----------------------------------------
 	 Responsive Menus Init with jPanelMenu
@@ -124,31 +189,58 @@ jQuery(window).on("load", function() {
 		breakpoint: 'mobile',
 		enter: function() {
 			jPM.on();
-			var tooltipWidth = $speaker.width()+2,
-					tooltipHeight = $speaker.height()+2;
+			
+			var tooltipWidth = $speaker.width() + 2,
+					tooltipHeight = $speaker.height() + 2;
 			initQtip(tooltipWidth, tooltipHeight, 0);
 
 			$speaker.click(function() {
-				var tooltipWidth = $speaker.width()+2,
-						tooltipHeight = $speaker.height()+2;
+				var tooltipWidth = $speaker.width() + 2,
+						tooltipHeight = $speaker.height() + 2;
 				initQtip(tooltipWidth, tooltipHeight, 0);
+			});
+			
+			// Now do the same for keynotes
+			tooltipWidth = $keynote.width() + 2;
+			tooltipHeight = $keynote.height() + 2;
+			initQtipKeynote(tooltipWidth, tooltipHeight, 0);
+			
+			$keynote.click(function() {
+				var tooltipWidth = $keynote.width() + 2,
+						tooltipHeight = $keynote.height() + 2;
+				initQtipKeynote(tooltipWidth, tooltipHeight, 0);
 			});
 		},
 		exit: function() {
 			jPM.off();
-			var tooltipWidth = (($speaker.outerWidth())*2) - ($speaker.outerWidth() - $speaker.width()) + 2,
-					tooltipHeight = $speaker.height()+ 2,
-					yPos = jQuery("#header").outerHeight()-4;
+			
+			var tooltipWidth = (($speaker.outerWidth()) * 2) - ($speaker.outerWidth() - $speaker.width()) + 2,
+					tooltipHeight = $speaker.height() + 2,
+					yPos = jQuery("#header").outerHeight() - 4;
 
 			$speaker.click(function() {
-				var tooltipWidth = (($speaker.outerWidth())*2) - ($speaker.outerWidth() - $speaker.width()) + 2,
-						tooltipHeight = $speaker.height()+ 2,
-						yPos = jQuery("#header").outerHeight()-4;
+				var tooltipWidth = (($speaker.outerWidth()) * 2) - ($speaker.outerWidth() - $speaker.width()) + 2,
+						tooltipHeight = $speaker.height() + 2,
+						yPos = jQuery("#header").outerHeight() - 4;
 
 				initQtip(tooltipWidth, tooltipHeight, yPos);
 			});
 
 			initQtip(tooltipWidth, tooltipHeight, yPos);
+			
+			// Now do the same for keynotes
+			tooltipWidth = (($keynote.outerWidth()) * 2) - ($keynote.outerWidth() - $keynote.width()) + 2;
+			tooltipHeight = $keynote.height() + 2;
+
+			$keynote.click(function() {
+				var tooltipWidth = (($keynote.outerWidth()) * 2) - ($keynote.outerWidth() - $keynote.width()) + 2,
+						tooltipHeight = $keynote.height() + 2,
+						yPos = jQuery("#header").outerHeight() - 4;
+
+				initQtipKeynote(tooltipWidth, tooltipHeight, yPos);
+			});
+
+			initQtipKeynote(tooltipWidth, tooltipHeight, yPos);
 		}
 	});
 
@@ -181,7 +273,17 @@ jQuery(document).ready(function($) {
 	}, function() {
 		$(this).find('h3').stop().animate({"opacity": 0}, 300);
 	});
+	
+	/* -----------------------------------------
+	 Keynotes Effects Init
+	 ----------------------------------------- */
+	$keynote = $(".keynote, .keynote-pres");
 
+	$keynote.hover(function() {
+		$(this).find('h3').stop().animate({"opacity": 1}, 300);
+	}, function() {
+		$(this).find('h3').stop().animate({"opacity": 0}, 300);
+	});
 
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 400) {
@@ -215,7 +317,6 @@ jQuery(document).ready(function($) {
 	}
 
 });
-
 
 /* -----------------------------------------
  Map Configuration
