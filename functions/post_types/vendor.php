@@ -41,7 +41,7 @@ function ci_create_cpt_vendor() {
 endif;
 
 if( !function_exists('ci_add_cpt_vendor_meta') ):
-function ci_add_cpt_vendor_meta(){
+function ci_add_cpt_vendor_meta() {
 	add_meta_box("ci_cpt_vendor_meta", __('Vendor Details', 'ci_theme'), "ci_add_cpt_vendor_meta_box", "vendor", "normal", "high");
 }
 endif;
