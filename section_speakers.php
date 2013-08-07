@@ -3,13 +3,13 @@
 		<div class="row">
 			<h1 class="section-title"><span><?php ci_e_setting('speaker_title'); ?></span></h1>
 
-			<?php $spk_q = new WP_Query( array(
+			<?php $speakers_q = new WP_Query( array(
 				'post_type'=>'speaker',
 				'posts_per_page' => -1,
 				'order' => 'ASC'
 			)); ?>
 
-			<?php if ( $spk_q->have_posts() ) : while ( $spk_q->have_posts() ) : $spk_q->the_post(); ?>
+			<?php if ( $speakers_q->have_posts() ) : while ( $speakers_q->have_posts() ) : $speakers_q->the_post(); ?>
 				<div class="twelve columns p-wrap">
 					<article class="presentation">
 						<div class="row">

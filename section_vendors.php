@@ -1,15 +1,15 @@
 <?php if ( !ci_setting('disable_vendor_section') ) : ?>
 	<section id="vendors">
 		<div class="row">
-			<h1 class="section-title"><span><?php ci_e_setting('vendors_title'); ?></span></h1>
+			<h1 class="section-title"><span><?php ci_e_setting('vendor_title'); ?></span></h1>
 			<ul class="vendor-list">
 
-				<?php $spns_q = new WP_Query( array(
+				<?php $vendor_q = new WP_Query( array(
 					'post_type'=>'vendor',
 					'posts_per_page' => -1
 				));	?>
 				
-				<?php if ( $spns_q->have_posts() ) : while ( $spns_q->have_posts() ) : $spns_q->the_post(); ?>
+				<?php if ( $vendor_q->have_posts() ) : while ( $vendor_q->have_posts() ) : $vendor_q->the_post(); ?>
 					<?php
 						$on_schedule = post_custom('ci_cpt_vendor_target_blank');
 						$vendor_url = post_custom('ci_cpt_vendor_url')
