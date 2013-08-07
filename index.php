@@ -6,6 +6,8 @@
 
 <?php get_template_part('section_about'); ?>
 
+<?php get_template_part('section_host'); ?>
+
 <?php get_template_part('section_speakers'); ?>
 
 <?php get_template_part('section_artists'); ?>
