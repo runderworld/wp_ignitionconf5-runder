@@ -2,6 +2,9 @@
 //
 // Menu Item Post Type related functions.
 //
+add_action('init', 'ci_create_cpt_artist');
+add_action('admin_init', 'ci_add_cpt_artist_meta');
+add_action('save_post', 'ci_update_cpt_artist_meta');
 
 if( !function_exists('ci_create_cpt_artist') ):
 function ci_create_cpt_artist() {
@@ -33,6 +36,32 @@ function ci_create_cpt_artist() {
 	);
 
 	register_post_type( 'artist' , $args );
+}
+endif;
+
+if( !function_exists('ci_add_cpt_artist_meta') ):
+function ci_add_cpt_artist_meta(){
+	//add_meta_box("ci_cpt_artist_meta", __('Artist Details', 'ci_theme'), "ci_add_cpt_artist_meta_box", "artist", "normal", "high");
+}
+endif;
+
+if( !function_exists('ci_update_cpt_artist_meta') ):
+function ci_update_cpt_artist($post_id){
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return;
+	if (isset($_POST['post_view']) and $_POST['post_view']=='list') return;
+
+	if (isset($_POST['post_type']) && $_POST['post_type'] == "vendor")
+	{
+		update_post_meta($post_id, "ci_cpt_vendor_url", (isset($_POST["ci_cpt_vendor_url"]) ? $_POST["ci_cpt_vendor_url"] : '') );
+		update_post_meta($post_id, "ci_cpt_vendor_target_blank", (isset($_POST["ci_cpt_vendor_target_blank"]) ? $_POST["ci_cpt_vendor_target_blank"] : '') );
+	}
+}
+endif;
+
+
+if( !function_exists('ci_add_cpt_artist_meta_box') ):
+function ci_add_cpt_artist_meta_box() {
+	//...
 }
 endif;
 ?>
