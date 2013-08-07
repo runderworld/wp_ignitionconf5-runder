@@ -23,27 +23,27 @@
 <?php else: ?>
 
 	<fieldset class="set">
-		<p class="guide"><?php _e('Check the following box if you want the Keynote Speakers section disabled.', 'ci_theme'); ?></p>
-		<?php ci_panel_checkbox('disable_keynote_section', 'enabled', __('Disable Keynote Speakers Section', 'ci_theme')); ?>
+		<p class="guide"><?php _e('Check the following box if you want the Keynotes section disabled.', 'ci_theme'); ?></p>
+		<?php ci_panel_checkbox('disable_keynote_section', 'enabled', __('Disable Keynotes Section', 'ci_theme')); ?>
 	</fieldset>
 	
 	<fieldset class="set">
-		<p class="guide"><?php _e('Enter the title of your Keynote Speakers section. (e.g. "Keynote Speakers").' , 'ci_theme'); ?></p>
-		<?php ci_panel_input('keynote_title', __('Keynote Speakers Section Title:', 'ci_theme')); ?>
+		<p class="guide"><?php _e('Enter the title of your Keynotes section. (e.g. "Keynote Speakers").' , 'ci_theme'); ?></p>
+		<?php ci_panel_input('keynote_title', __('Keynotes Section Title:', 'ci_theme')); ?>
 
-		<p class="guide"><?php _e('Enter the Keynote Speaker section\'s title as it will appear on your Navigation Menu.' , 'ci_theme'); ?></p>
-		<?php ci_panel_input('keynote_menu_title', __('Keynote Speakers Menu Title:', 'ci_theme')); ?>
+		<p class="guide"><?php _e('Enter the Keynotes section\'s title as it will appear on your Navigation Menu.' , 'ci_theme'); ?></p>
+		<?php ci_panel_input('keynote_menu_title', __('Keynotes Menu Title:', 'ci_theme')); ?>
 	</fieldset>
 
 	<fieldset class="set">
-		<p class="guide"><?php _e('Select how many columns you want the keynote speakers area to be. For example, if you have three keynote speakers, you should set the number to three columns. If you have eight keynote speakers, you should set the number to four columns so that you get two rows of four keynote speakers.' , 'ci_theme'); ?></p>
+		<p class="guide"><?php _e('Select how many columns you want the Keynotes area to be. For example, if you have three keynote speakers, you should set the number to three columns. If you have eight keynote speakers, you should set the number to four columns so that you get two rows of four keynote speakers.' , 'ci_theme'); ?></p>
 		<?php 
 			$options = array(
 				'two' => __('Six Columns', 'ci_theme'),
 				'three' => __('Four Columns', 'ci_theme'),
 				'four' => __('Three Columns', 'ci_theme'),
 			);
-			ci_panel_dropdown('keynote_columns', $options, __('Keynote Speaker section columns:', 'ci_theme'));
+			ci_panel_dropdown('keynote_columns', $options, __('Keynote section columns:', 'ci_theme'));
 		?>
 	</fieldset>
 

@@ -7,7 +7,7 @@
 
 // Don't change the following constant. A lot of things depend on this.
 // Even if you duplicate this file in a child theme, DON'T change this constant.
-if(!defined('CI_THEME_NAME')) 		define('CI_THEME_NAME', 'ignitionconf-runder');
+if(!defined('CI_THEME_NAME')) 		define('CI_THEME_NAME', 'ignitionconf');
 
 // The following constant stores the name as it should be printed, i.e. the nice name. 
 // Spaces, special characters, etc. are allowed.

@@ -249,6 +249,11 @@ h4 { font-size: 16px; }
 h5 { font-size: 14px; }
 h6 { font-size: 12px; }
 
+/* Invert nested italix, son */
+em > em {
+	font-style: normal;
+}
+
 a, a:visited { text-decoration: none; line-height: inherit; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease;}
 
 
@@ -378,7 +383,17 @@ body {
 #jPanelMenu-menu ul { list-style: none; margin: 0; padding: 0; display: block !important; visibility: visible !important; }
 #jPanelMenu-menu li { display: block; float: none; padding: 0; margin: 0; border: none; }
 #jPanelMenu-menu > li:last-child {  border-bottom: 1px solid rgba(255,255,255,0.1); }
-#jPanelMenu-menu a, #jPanelMenu-menu a:visited { padding: 12px 20px; display: block; border-bottom: 1px solid rgba(0,0,0,0.7); border-top: 1px solid rgba(255,255,255,0.1); color: #eeeeee; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-weight: bold; font-size: 14px; text-shadow: 1px 1px 0 rgba(0,0,0,1); }
+#jPanelMenu-menu a, #jPanelMenu-menu a:visited {
+	padding: 12px 20px;
+	display: block;
+	border-bottom: 1px solid rgba(0,0,0,0.7);
+	border-top: 1px solid rgba(255,255,255,0.1);
+	color: #eeeeee;
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	text-shadow: 1px 1px 0 rgba(0,0,0,1);
+}
 #jPanelMenu-menu a:hover {
 	background-image: linear-gradient(bottom, rgb(43,46,48) 1%, rgb(50,54,56) 100%);
 	background-image: -o-linear-gradient(bottom, rgb(43,46,48) 1%, rgb(50,54,56) 100%);
@@ -460,18 +475,22 @@ body {
 ----------------------------------------- */
 
 #about,
+#host,
 #speakers,
 #keynotes,
+#artists,
 #schedule,
-#sponsors,
+#vendor,
 #contact {
 	padding: 0 0 60px;
 }
 
 #about:after,
+#host:after,
 #speakers:after,
 #keynotes:after,
-#sponsors:after {
+#artists:after,
+#vendor:after {
 	content: " ";
 	display: block;
 	background: url(images/cross.png) no-repeat;
@@ -609,6 +628,21 @@ section:last-of-type {
 }
 
 /* -----------------------------------------
+   HOST SECTION
+----------------------------------------- */
+
+.host-text {
+	text-align: center;
+	color: #FFF;
+	font-style: italic;
+	font-size: 24px;
+}
+
+.host-text p:last-of-type {
+	margin-bottom: 0;
+}
+
+/* -----------------------------------------
    SPEAKERS SECTION
 ----------------------------------------- */
 
@@ -624,7 +658,7 @@ section:last-of-type {
 }
 
 .speaker img,
-.speaker-pres img{
+.speaker-pres img {
 	border-radius: 2px;
 	display: block;
 	line-height: 0;
@@ -644,7 +678,7 @@ section:last-of-type {
 }
 
 .speaker h3,
-.speaker-pres h3{
+.speaker-pres h3 {
 	bottom: 0;
 	font-size: 12px;
 	font-weight: 600;
@@ -667,37 +701,46 @@ section:last-of-type {
 }
 
 /* -----------------------------------------
-   KEYNOTES SECTION
+   KEYNOTES & ARTISTS SECTIONS
 ----------------------------------------- */
 
-.keynote {
+.keynote,
+.artist {
 	position: relative;
 	margin-bottom: 30px;
 	cursor: help;
 }
 
-.keynote-pres {
+.keynote-pres,
+.artist-pres {
 	margin-bottom: 30px;
 	text-align: center;
 }
 
 .keynote img,
-.keynote-pres img{
+.keynote-pres img,
+.artist img,
+.artist-pres img {
 	border-radius: 2px;
 	display: block;
 	line-height: 0;
 	box-shadow: 0 0 10px rgba(0,0,0,1);
 }
 
-.keynote-thumb {
-	/*width: 100%;*/
+.keynote-thumb,
+.artist-thumb {
+	width: 100%;
 }
 
-.keynote-thumb > img {
+/*XXX worth a shot*/
+.keynote-thumb > img,
+.artist-thumb > img {
 	max-width: 214px;
 }
+/*XXX*/
 
-.keynote-desc {
+.keynote-desc,
+.artist-desc {
 	padding: 0;
 	display:none;
 	max-width: 100%;
@@ -706,7 +749,9 @@ section:last-of-type {
 }
 
 .keynote h3,
-.keynote-pres h3{
+.keynote-pres h3,
+.artist h3,
+.artist-pres h3 {
 	bottom: 0;
 	font-size: 12px;
 	font-weight: 600;
@@ -723,7 +768,8 @@ section:last-of-type {
 	opacity: 0;
 }
 
-.keynote-title {
+.keynote-title,
+.artist-title {
 	font-size: 14px;
 	margin-bottom: 5px;
 }
@@ -738,13 +784,13 @@ section:last-of-type {
 	font-style: italic;
 }
 
-.qtip-dark{
+.qtip-dark {
 	background-color: #000;
 	border-color: #000;
 	color: #FFF;
 }
 
-.qtip-content{
+.qtip-content {
 	padding: 17px 7px 22px 22px;
 	height: 100%;
 }
@@ -761,6 +807,7 @@ section:last-of-type {
 
 /* -----------------------------------------
    (OLD) SCHEDULE SECTION
+   (NEW) SPEAKER SECTION
 ----------------------------------------- */
 
 .presentation {
@@ -776,10 +823,15 @@ section:last-of-type {
 	border-bottom: 3px double #3E3E3E;
 }
 
-.desc h1 {
+.presentation .desc h1 {
 	color: #FFF;
 	font-size: 22px;
 	margin-top: -10px;
+	font-style: normal; /* override base h1 style */
+}
+
+.presentation .desc h1 em {
+	margin-right: 4px;
 }
 
 .presentation .time {
@@ -802,20 +854,20 @@ section:last-of-type {
 }
 
 /* -----------------------------------------
-   SPONSORS SECTION
+   VENDORS SECTION
 ----------------------------------------- */
 
-.sponsor-list {
+.vendor-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-.sponsor-list li {
+.vendor-list li {
 	margin-bottom: 30px;
 }
 
-.sponsor-list li img {
+.vendor-list li img {
 	border-radius: 2px;
 	box-shadow: 0 0 16px rgba(0,0,0,0.5);
 }

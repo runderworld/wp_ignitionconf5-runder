@@ -3,12 +3,12 @@
 		<div class="row">
 			<h1 class="section-title"><span><?php ci_e_setting('keynote_title'); ?></span></h1>
 
-			<?php $keyn_q = new WP_Query( array(
+			<?php $keynote_q = new WP_Query( array(
 				'post_type'=>'keynote',
 				'posts_per_page' => -1
 			)); ?>
 
-			<?php if ( $keyn_q->have_posts() ) : while ( $keyn_q->have_posts() ) : $keyn_q->the_post(); ?>
+			<?php if ( $keynote_q->have_posts() ) : while ( $keynote_q->have_posts() ) : $keynote_q->the_post(); ?>
 				<article class="keynote <?php ci_e_setting('keynote_columns'); ?> mobile-two columns">
 					<div class="keynote-thumb">
 						<?php the_post_thumbnail('square'); ?>

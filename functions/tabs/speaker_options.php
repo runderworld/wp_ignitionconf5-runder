@@ -30,7 +30,7 @@
 		<p class="guide"><?php _e('Enter the title of your Speakers section. (e.g. "Speakers", single words work best).' , 'ci_theme'); ?></p>
 		<?php ci_panel_input('speaker_title', __('Speakers Section Title:', 'ci_theme')); ?>
 
-		<p class="guide"><?php _e('Enter the Speaker section\'s title as it will appear on your Navigation Menu.' , 'ci_theme'); ?></p>
+		<p class="guide"><?php _e('Enter the Speakers section\'s title as it will appear on your Navigation Menu.' , 'ci_theme'); ?></p>
 		<?php ci_panel_input('speaker_menu_title', __('Speakers Menu Title:', 'ci_theme')); ?>
 	</fieldset>
 	

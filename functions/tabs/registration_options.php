@@ -16,7 +16,7 @@
 	$ci_defaults['disable_registration_button']	= '';
 	$ci_defaults['button_text']	= 'Register Now';
 	$ci_defaults['eventbrite_id'] = '';
-
+	$ci_defaults['url_for_popup'] = '';
 ?>
 <?php else: ?>
 
@@ -33,4 +33,8 @@
 		<?php ci_panel_input('eventbrite_id', __('Eventbrite ID:', 'ci_theme')); ?>
 	</fieldset>
 
+	<fieldset class="set">
+		<p class="guide"><?php _e('Enter the URL of the Registration link to open in a modal dialog popup (http://...).' , 'ci_theme'); ?></p>
+		<?php ci_panel_input('url_for_popup', __(':', 'ci_theme')); ?>
+	</fieldset>
 <?php endif; ?>

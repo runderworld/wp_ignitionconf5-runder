@@ -18,7 +18,7 @@
 								<h3><?php the_title(); ?></h3>
 							</div>
 							<div class="desc nine columns">
-								<h1><?php echo post_custom('ci_cpt_speaker_pres_title'); ?></h1>
+								<h1><em><?php echo post_custom('ci_cpt_speaker_pres_title'), '</em> with ', the_title(); ?></h1>
 								<?php echo wpautop(post_custom('ci_cpt_speaker_pres_desc')); ?>
 							</div>
 						</div>

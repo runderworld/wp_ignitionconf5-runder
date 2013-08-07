@@ -2,6 +2,9 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
+	<!-- GCF for IE6- support (must be first meta)
+  ================================================== -->
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 	<!-- Basic Page Needs
   ================================================== -->

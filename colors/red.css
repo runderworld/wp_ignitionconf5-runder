@@ -16,7 +16,7 @@ a:hover { color: #ff514f; }
 input[type=submit],
 .btn, .btn:visited,
 .wpcf7 input[type=submit] {
-	background-color: #aa4e36/*ff1131*/;
+	background-color: #aa4e36; /*XXX #ff1131 XXX*/
 }
 
 #navigation > li > .btn.register,
@@ -32,8 +32,8 @@ input[type=submit],
 #btop:hover,
 input[type=submit]:hover,
 .btn:hover,
-.wpcf7 input[type=submit]:hover{
-	background: #aa4e36/*ff514f*/;
+.wpcf7 input[type=submit]:hover {
+	background: #ff514f;
 }
 
 

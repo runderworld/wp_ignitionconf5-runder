@@ -159,7 +159,7 @@ table.show-for-xlarge, table.show-for-large, table.hide-for-small, table.hide-fo
 	.flexslider:hover .flex-next {opacity: 0.8; right: 0; margin:0;}
 	.flexslider:hover .flex-prev {opacity: 0.8; left: 0; nargin:0;}
 
-	.sponsor-list li { text-align: center; }
+	.vendor-list li { text-align: center; }
 
 	input[type="text"],
 	input[type="password"],
