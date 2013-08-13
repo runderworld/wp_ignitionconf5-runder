@@ -15,7 +15,7 @@
 						<h3><?php the_title(); ?></h3>
 					</div>
 					<div class="artist-desc">
-						<p class="artist-title"><strong><?php the_title(); ?></strong></p>
+						<p class="artist-title"><span class="artist-name"><?php the_title(); ?><span class="artist-datetime"><?php ci_e_setting('perf_date_time'); ?></p>
 						<?php the_content(); ?>
 					</div>
 				</article>

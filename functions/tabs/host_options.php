@@ -17,8 +17,9 @@
 	$ci_defaults['disable_host_section'] = '';
 	$ci_defaults['host_title'] = 'Host';
 	$ci_defaults['host_menu_title'] = 'Host';
-	$ci_defaults['host_page'] = '';
-
+	$ci_defaults['host_name'] = '';
+	$ci_defaults['host_desc_html'] = '';
+	$ci_defaults['host_photo'] = '';
 ?>
 <?php else: ?>
 
@@ -26,24 +27,24 @@
 		<p class="guide"><?php _e('Check the following box if you want the Host section disabled.', 'ci_theme'); ?></p>
 		<?php ci_panel_checkbox('disable_host_section', 'disabled', __('Disable Host Section', 'ci_theme')); ?>
 	</fieldset>
-	
+
 	<fieldset class="set">
-		<p class="guide"><?php _e('Enter the title of your Host section (e.g. "Host").' , 'ci_theme'); ?></p>
+		<p class="guide"><?php _e('Enter the title of your Host section (e.g. "Meet the Host").' , 'ci_theme'); ?></p>
 		<?php ci_panel_input('host_title', __('Host Section Title:', 'ci_theme')); ?>
 
-		<p class="guide"><?php _e('Enter the title of the Host section for the main menu. (e.g. "Hello", or "Host", single words work best).' , 'ci_theme'); ?></p>
+		<p class="guide"><?php _e('Enter the title of the Host section for the main menu; single words work best (e.g. "Host").' , 'ci_theme'); ?></p>
 		<?php ci_panel_input('host_menu_title', __('Host Menu Title:', 'ci_theme')); ?>
 	</fieldset>
 
 	<fieldset class="set">
-		<p class="guide"><?php _e('Select your Host page. The contents of this page will appear as the contents of the Host section.' , 'ci_theme'); ?></p>
+		<p class="guide"><?php _e('Specify the name of the host to be displayed.' , 'ci_theme'); ?></p>
+		<?php ci_panel_input('host_name', __('Host Name:', 'ci_theme')); ?>
 
-		<label for="<?php echo THEME_OPTIONS; ?>[host_page]"><?php _e('Select the Host page:', 'ci_theme'); ?></label>
-		<?php wp_dropdown_pages(array(
-			'show_option_none'=>' ',
-			'selected'=>$ci['host_page'],
-			'name'=>THEME_OPTIONS.'[host_page]'
-		)); ?>
+		<p class="guide"><?php _e('Specify the HTML to be output as the description for the host to be displayed.' , 'ci_theme'); ?></p>
+		<?php ci_panel_textarea('host_desc_html', __('Host Description (accepts HTML):', 'ci_theme')); ?>
+
+		<p class="guide"><?php _e('Specify a photo for the host to be displayed.' , 'ci_theme'); ?></p>
+		<?php ci_panel_upload_image('host_photo', __('Upload a photo of the host to be displayed', 'ci_theme')); ?>
 	</fieldset>
 
 <?php endif; ?>

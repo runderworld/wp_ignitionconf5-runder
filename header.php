@@ -41,9 +41,13 @@
 				<ul id="navigation" class="sf-menu group">
 
 					<li><a class="scroll" href="#page"><?php _e('Home', 'ci_theme'); ?></a></li>
-					
+
 					<?php if ( !ci_setting('disable_about_section') ) : ?>
 						<li><a class="scroll" href="#about"><?php ci_e_setting('about_menu_title'); ?></a></li>
+					<?php endif; ?>
+
+					<?php if ( !ci_setting('disable_keynote_section') ) : ?>
+						<li><a class="scroll" href="#keynotes"><?php ci_e_setting('keynote_menu_title'); ?></a></li>
 					<?php endif; ?>
 
 					<?php if ( !ci_setting('disable_speaker_section') ) : ?>
@@ -54,20 +58,21 @@
 						<li><a class="scroll" href="#schedule"><?php ci_e_setting('schedule_menu_title'); ?></a></li>
 					<?php endif; ?>
 
-					<?php if ( !ci_setting('disable_sponsors_section') ) : ?>
+					<?php if ( !ci_setting('disable_vendor_section') ) : ?>
 						<li><a class="scroll" href="#sponsors"><?php ci_e_setting('sponsors_menu_title'); ?></a></li>
 					<?php endif; ?>
 
 					<?php if ( !ci_setting('disable_contact_section') ) : ?>
 						<li><a class="scroll" href="#contact"><?php ci_e_setting('contact_menu_title'); ?></a></li>
 					<?php endif; ?>
-					
+
 					<?php if ( !ci_setting('disable_registration_button') ) : ?>
-						<?php if ( ci_setting('eventbrite_id') ) : ?>
-							<li><a class="btn register" href="<?php echo 'http://www.eventbrite.com/event/' . ci_setting('eventbrite_id') . '?ref=ebtn'; ?>"><?php ci_e_setting('button_text'); ?></a></li>
-						<?php else : ?>
-							<li><a class="lbp_secondary btn register scroll" rel="lightbox[secondary-demo]" href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=NBNuH7SDjNJKXlFv/F/0Xw==&cCode=gu6bxUwJSpiBDyiUOfUi2A=="><?php ci_e_setting('button_text'); ?></a></li>
-						<?php endif; ?>
+						<li><a class="\
+							<?php if ( ci_setting('eventbrite_id') ) :
+								echo 'btn register" href="http://www.eventbrite.com/event/'.ci_setting('eventbrite_id').'?ref=ebtn';
+							else :
+								echo 'btn register scroll" href="#register"';
+							endif; ?>" target="_blank"><?php ci_e_setting('button_text'); ?></a></li>
 					<?php endif; ?>
 
 				</ul><!-- #navigation -->

@@ -40,28 +40,34 @@ function ci_create_cpt_artist() {
 endif;
 
 if( !function_exists('ci_add_cpt_artist_meta') ):
-function ci_add_cpt_artist_meta(){
-	//add_meta_box("ci_cpt_artist_meta", __('Artist Details', 'ci_theme'), "ci_add_cpt_artist_meta_box", "artist", "normal", "high");
+function ci_add_cpt_artist_meta() {
+	add_meta_box("ci_cpt_artist_meta", __('Artist Performance Date/Time', 'ci_theme'), "ci_add_cpt_artist_meta_box", "artist", "normal", "high");
 }
 endif;
 
 if( !function_exists('ci_update_cpt_artist_meta') ):
-function ci_update_cpt_artist($post_id){
+function ci_update_cpt_artist($post_id) {
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return;
 	if (isset($_POST['post_view']) and $_POST['post_view']=='list') return;
 
-	if (isset($_POST['post_type']) && $_POST['post_type'] == "vendor")
+	if (isset($_POST['post_type']) && $_POST['post_type'] == "artist")
 	{
-		update_post_meta($post_id, "ci_cpt_vendor_url", (isset($_POST["ci_cpt_vendor_url"]) ? $_POST["ci_cpt_vendor_url"] : '') );
-		update_post_meta($post_id, "ci_cpt_vendor_target_blank", (isset($_POST["ci_cpt_vendor_target_blank"]) ? $_POST["ci_cpt_vendor_target_blank"] : '') );
+		update_post_meta($post_id, "ci_cpt_artist_perf_date_time", (isset($_POST["ci_cpt_artist_perf_date"]) ? $_POST["ci_cpt_artist_perf_date"] : '') );
 	}
 }
 endif;
 
-
 if( !function_exists('ci_add_cpt_artist_meta_box') ):
 function ci_add_cpt_artist_meta_box() {
-	//...
+	global $post;
+	$perf_date_time = get_post_meta($post->ID, 'ci_cpt_artist_perf_date_time', true);
+	?>
+	<p>
+		<label for="ci_cpt_artist_perf_date_time"><?php _e('Artist Performance Date/Time:', 'ci_theme'); ?></label>
+		<br>
+		<input id="ci_cpt_artist_perf_date_time" name="ci_cpt_artist_perf_date_time" class="medium" type="text" value="<?php echo esc_attr($perf_date_time); ?>">
+	</p>
+<?php
 }
 endif;
 ?>

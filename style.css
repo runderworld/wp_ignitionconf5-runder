@@ -318,7 +318,7 @@ body {
 #navigation > li > a:visited { } /* First Level Menu Link Styles */
 
 #navigation > li ul a,
-#navigation > li ul a:visited {  } /* All Other Menu Level Link Styles */
+#navigation > li ul a:visited { } /* All Other Menu Level Link Styles */
 
 #navigation > li ul a:hover,
 #navigation > li ul .sfHover > a,
@@ -354,7 +354,7 @@ body {
 	padding: 5px 10px 0 10px;
 	height: 68px;
 	display: none;
-	background: #242424 url(images/pattern.png) repeat-x top;
+	background: #242424; /*url(images/pattern.png) repeat-x top;*/
 	box-shadow: 0 0 6px rgba(0,0,0,1);
 	border-bottom: 1px solid #2b2b2b;
 
@@ -391,7 +391,7 @@ body {
 #jPanelMenu-menu { margin: 0; padding: 0; background: #2b2e30; border-right: 1px solid rgba(0,0,0,0.3); }
 #jPanelMenu-menu ul { list-style: none; margin: 0; padding: 0; display: block !important; visibility: visible !important; }
 #jPanelMenu-menu li { display: block; float: none; padding: 0; margin: 0; border: none; }
-#jPanelMenu-menu > li:last-child {  border-bottom: 1px solid rgba(255,255,255,0.1); }
+#jPanelMenu-menu > li:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
 #jPanelMenu-menu a, #jPanelMenu-menu a:visited {
 	padding: 12px 20px;
 	display: block;
@@ -452,7 +452,7 @@ body {
 
 #header {
 	padding: 20px 0;
-	background: #242424 url(images/pattern.png) repeat-x top;
+	background: #242424; /*url(images/pattern.png) repeat-x top;*/
 	position: fixed;
 	width: 100%;
 	z-index: 13000;
@@ -483,6 +483,7 @@ body {
    GENERAL SECTIONS STYLING
 ----------------------------------------- */
 
+#intro,
 #about,
 #host,
 #speakers,
@@ -494,18 +495,20 @@ body {
 	padding: 0 0 60px;
 }
 
+#intro:after,
 #about:after,
 #host:after,
 #speakers:after,
 #keynotes:after,
 #artists:after,
+#schedule:after,
 #vendor:after {
 	content: " ";
 	display: block;
 	background: url(images/cross.png) no-repeat;
 	width: 11px;
 	height: 11px;
-	margin: 60px auto 0;
+	margin: 0 auto;
 }
 
 .section-title {
@@ -518,19 +521,29 @@ body {
 .section-title span {
 	display: inline-block;
 	padding: 0 5px 10px;
-	border-bottom: 3px double #DDD;
+	border-bottom: 3px solid #CCC;
 }
 
 section:first-of-type {
 	padding-top: 70px !important;
-	background: url(images/pattern.png) repeat-x top;
+	/*background: url(images/pattern.png) repeat-x top;*/
 }
 
 section:last-of-type {
-	background: url(images/pattern-reversed.png) repeat-x bottom;
+	/*background: url(images/pattern-reversed.png) repeat-x bottom;*/
 }
 
-#btop, #btop:visited { position:fixed; bottom:30px; right:30px; z-index:9999; padding:10px; display:none; border-radius: 2px; font-size: 12px; }
+#btop,
+#btop:visited {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	z-index: 9999;
+	padding: 10px;
+	display: none;
+	border-radius: 2px;
+	font-size: 12px;
+}
 
 /* -----------------------------------------
    SLIDERS SECTION
@@ -619,7 +632,65 @@ section:last-of-type {
 	display: block;
 }
 
-#image-slider .slides > li:first-child { display: block; }
+#image-slider .slides > li:first-child {
+	display: block;
+}
+
+/* -----------------------------------------
+   INTRO SECTION
+----------------------------------------- */
+
+div.intro-content {
+	margin: 0 auto;
+	width: 100%;
+	font-style: normal;
+	font-size: 24px;
+	text-align: left;
+	color: #FFF;
+}
+
+div.intro-content > div.intro-def {
+	margin: 0 auto;
+	width: 50%;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
+div.intro-content > div.intro-def > div.intro-def-word {
+	display: inline-block;
+	margin: 0 8px 0 0;
+	font-size: 133%;
+	font-weight: bold;
+}
+
+div.intro-content > div.intro-def > div.intro-def-pronunc {
+	display: inline-block;
+	font-size: 80%;
+	font-weight: normal;
+}
+
+div.intro-content > div.intro-def > div.intro-def-type {
+	font-size: 80%;
+	font-style: italic;
+}
+
+div.intro-content > div.intro-def > ul {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+div.intro-content > div.intro-everyone {
+	margin: 0 auto;
+	width: 55%;
+	font-size: 100%;
+	text-align: center;
+}
+
+div.intro-content > div.intro-tagline {
+	margin: 0 auto;
+	width: 80%;
+	font-size: 133%;
+	text-align: center;
+}
 
 /* -----------------------------------------
    ABOUT SECTION
@@ -628,7 +699,7 @@ section:last-of-type {
 .about-text {
 	text-align: center;
 	color: #FFF;
-	font-style: italic;
+	font-style: normal;
 	font-size: 24px;
 }
 
@@ -640,15 +711,33 @@ section:last-of-type {
    HOST SECTION
 ----------------------------------------- */
 
-.host-text {
-	text-align: center;
+.host-wrapper {
+	margin: 0 auto;
+	width: 70%;
 	color: #FFF;
-	font-style: italic;
-	font-size: 24px;
 }
 
-.host-text p:last-of-type {
-	margin-bottom: 0;
+.host-wrapper > h3.host-name {
+	float: left;
+	margin: 0 0 0 16px;
+	font-style: normal;
+	font-size: 24px;
+	text-align: left;
+}
+
+.host-wrapper > img.host-photo {
+	float: left;
+	width: 190px;
+	border-radius: 2px;
+	display: block;
+	line-height: 0;
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+.host-wrapper > .host-desc {
+	float: left;
+	margin-left: 16px;
+	font-size: 60%;
 }
 
 /* -----------------------------------------
@@ -680,7 +769,7 @@ section:last-of-type {
 
 .speaker-desc {
 	padding: 0;
-	display:none;
+	display: none;
 	max-width: 100%;
 	max-height: 100%;
 	overflow-y: hidden;
@@ -779,8 +868,18 @@ section:last-of-type {
 
 .keynote-title,
 .artist-title {
-	font-size: 14px;
 	margin-bottom: 5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.artist-name {
+	
+}
+
+.artist-datetime {
+	font-size: 80%;
+	font-weight: normal;
 }
 
 /* QTip Styles */
@@ -819,17 +918,9 @@ section:last-of-type {
    (NEW) SPEAKER SECTION
 ----------------------------------------- */
 
-.presentation {
+.p-wrap .presentation {
 	padding: 70px 0 39px;
 	border-bottom: 1px solid #3E3E3E;
-}
-
-.p-wrap:first-of-type .presentation {
-	border-top: 3px double #3E3E3E;
-}
-
-.p-wrap:last-of-type .presentation {
-	border-bottom: 3px double #3E3E3E;
 }
 
 .presentation .desc h1 {

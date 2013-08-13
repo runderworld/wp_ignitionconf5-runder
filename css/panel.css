@@ -1,10 +1,13 @@
+#slider_options span,
+#intro_options span,
+#keynote_options span,
 #about_options span,
+#host_options span,
+#speaker_options span,
+#artist_options span,
+#schedule_options span,
 #vendor_options span,
 #contact_options span,
-#schedule_options span,
-#slider_options span,
-#speaker_options span,
-#keynote_options span,
 #registration_options span {
     background: url("../images/tabarrow.png") no-repeat scroll 10px 0 transparent;
     text-indent: 15px;

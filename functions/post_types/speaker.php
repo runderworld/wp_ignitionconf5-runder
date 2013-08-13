@@ -40,14 +40,14 @@ function ci_create_cpt_speaker() {
 endif;
 
 if( !function_exists('ci_add_cpt_speaker_meta') ):
-function ci_add_cpt_speaker_meta(){
+function ci_add_cpt_speaker_meta() {
 	add_meta_box("ci_cpt_speaker_meta", __('Speaker Presentation Details', 'ci_theme'), "ci_add_cpt_speaker_meta_box", "speaker", "normal", "high");
 }
 endif;
 
 if( !function_exists('ci_update_cpt_speaker_meta') ):
-function ci_update_cpt_speaker_meta($post_id){
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return;
+function ci_update_cpt_speaker_meta($post_id) {
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 	if (isset($_POST['post_view']) and $_POST['post_view']=='list') return;
 
 	if (isset($_POST['post_type']) && $_POST['post_type'] == "speaker")
@@ -60,7 +60,7 @@ function ci_update_cpt_speaker_meta($post_id){
 endif;
 
 if( !function_exists('ci_add_cpt_speaker_meta_box') ):
-function ci_add_cpt_speaker_meta_box(){
+function ci_add_cpt_speaker_meta_box() {
 	global $post;
 	$pres_title = get_post_meta($post->ID, 'ci_cpt_speaker_pres_title', true);
 	$pres_desc = get_post_meta($post->ID, 'ci_cpt_speaker_pres_desc', true);
@@ -68,7 +68,7 @@ function ci_add_cpt_speaker_meta_box(){
 	?>
 	<p>
 		<label for="ci_cpt_speaker_pres_time"><?php _e('Presentation Time:', 'ci_theme'); ?></label>
-		<br/>
+		<br>
 		<input id="ci_cpt_speaker_pres_time" name="ci_cpt_speaker_pres_time" class="medium" type="text" value="<?php echo esc_attr($pres_time); ?>">
 	</p>
 

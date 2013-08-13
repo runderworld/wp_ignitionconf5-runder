@@ -2,9 +2,11 @@
 
 <?php get_template_part('section_slider'); ?>
 
-<?php get_template_part('section_keynotes'); ?>
+<?php get_template_part('section_intro'); ?>
 
 <?php get_template_part('section_about'); ?>
+
+<?php get_template_part('section_keynotes'); ?>
 
 <?php get_template_part('section_host'); ?>
 
