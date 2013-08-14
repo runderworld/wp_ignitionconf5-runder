@@ -855,14 +855,9 @@ div.intro-content > div.intro-tagline {
 	box-shadow: 0 0 10px rgba(0,0,0,1);
 }
 
+/*XXX worth a shot*/
 .keynote-thumb,
 .artist-thumb {
-	width: 100%;
-}
-
-/*XXX worth a shot*/
-.keynote-thumb > img,
-.artist-thumb > img {
 	max-width: 214px;
 }
 /*XXX*/

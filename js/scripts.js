@@ -102,11 +102,11 @@ jQuery(window).on("load", function () {
 			switch (idx) {
 				case 0:  // Left Keynote box
 					attrMy = 'right center';
-					attrAt = 'left center';
+					attrAt = 'center';
 					break;
 				case 1:  // Middle Keynote box
-					attrMy = 'top center';
-					attrAt = 'bottom center';
+					attrMy = 'center';
+					attrAt = 'center';
 					break;
 				case 2:  // Right Keynote box
 					attrMy = 'left center';
@@ -171,11 +171,11 @@ jQuery(window).on("load", function () {
 			switch (idx) {
 				case 0:  // Left Artist box
 					attrMy = 'right center';
-					attrAt = 'left center';
+					attrAt = 'center';
 					break;
 				case 1:  // Middle Artist box
-					attrMy = 'top center';
-					attrAt = 'bottom center';
+					attrMy = 'center';
+					attrAt = 'center';
 					break;
 				case 2:  // Right Artist box
 					attrMy = 'left center';

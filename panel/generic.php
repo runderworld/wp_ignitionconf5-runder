@@ -362,7 +362,7 @@ if( !function_exists('ci_logo')):
 function ci_logo($before="", $after=""){ 
 	$snippet = $before;
 		
-    $snippet .= '<a href="'.home_url().'#page">';
+    $snippet .= '<a href="'.home_url().'">';
 
     if(ci_setting('logo')){
 		$snippet .= '<img src="'.ci_setting('logo').'" alt="'.get_bloginfo('name').'" />';
