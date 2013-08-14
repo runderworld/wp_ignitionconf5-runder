@@ -20,4 +20,6 @@
 
 <?php get_template_part('section_contact'); ?>
 
+<?php get_template_part('section_registration'); ?>
+
 <?php get_footer(); ?>

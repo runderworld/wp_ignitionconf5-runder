@@ -337,6 +337,8 @@ body {
 	position: relative;
 	top: -10px;
 	margin-left: 10px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	border-radius: 2px;
 }
 
@@ -459,6 +461,7 @@ body {
 	top: 0;
 	box-shadow: 0 0 6px rgba(0,0,0,1);
 	border-bottom: 1px solid #2b2b2b;
+	line-height: 1.0;
 }
 
 #header .row {
@@ -490,8 +493,9 @@ body {
 #keynotes,
 #artists,
 #schedule,
-#vendor,
-#contact {
+#vendors,
+#contact,
+#registration {
 	padding: 0 0 60px;
 }
 
@@ -502,7 +506,8 @@ body {
 #keynotes:after,
 #artists:after,
 #schedule:after,
-#vendor:after {
+#vendors:after,
+#contact:after { /* omit last section: #registration */
 	content: " ";
 	display: block;
 	background: url(images/cross.png) no-repeat;
@@ -541,6 +546,8 @@ section:last-of-type {
 	z-index: 9999;
 	padding: 10px;
 	display: none;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	font-size: 12px;
 }
@@ -602,6 +609,8 @@ section:last-of-type {
 	width: 40px;
 	display: block;
 	position: static;
+	-moz-border-radius: 0 2px 2px 0;
+	-webkit-border-radius: 0 2px 2px 0;
 	border-radius: 0 2px 2px 0;
 	opacity: 1;
 	box-shadow: inset 15px 0 10px rgba(0,0,0,0.4);
@@ -621,6 +630,8 @@ section:last-of-type {
 
 .flex-viewport {
 	z-index: 500;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	border-radius: 2px;
 }
 
@@ -651,13 +662,13 @@ div.intro-content {
 
 div.intro-content > div.intro-def {
 	margin: 0 auto;
-	width: 50%;
+	width: 70%;
 	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 }
 
 div.intro-content > div.intro-def > div.intro-def-word {
 	display: inline-block;
-	margin: 0 8px 0 0;
+	margin: 0 20px 0 0;
 	font-size: 133%;
 	font-weight: bold;
 }
@@ -669,25 +680,38 @@ div.intro-content > div.intro-def > div.intro-def-pronunc {
 }
 
 div.intro-content > div.intro-def > div.intro-def-type {
-	font-size: 80%;
+	font-size: 70%;
 	font-style: italic;
+	line-height: 1.0;
 }
 
-div.intro-content > div.intro-def > ul {
-	font-size: 100%;
-	font-weight: normal;
+div.intro-content > div.intro-def > ol {
+	margin: 8px 0;
+	padding-left: 0;
+	list-style-position: inside;
+}
+
+div.intro-content > div.intro-def > ol > li.intro-def-callout {
+	font-size: 130%;
+	font-weight: bold;
+	/* From .shadow */
+	-webkit-text-shadow:0px 0px 10px #aaa; /* for chrome */
+	-moz-text-shadow:0px 0px 10px #aaa; /* for firefox */
+	-o-text-shadow:0px 0px 10px #aaa; /* for opera */
+	-ms-text-shadow:0px 0px 10px #aaa; /* for ie 9+ */
+	-khtml-text-shadow:0px 0px 10px #aaa; /* for KHTML based browser */
+	-text-shadow:0px 0px 10px #aaa; /* for browsers with native support */
+	text-shadow:0px 0px 10px #aaa; /* same as above */
 }
 
 div.intro-content > div.intro-everyone {
-	margin: 0 auto;
-	width: 55%;
+	margin: 24px auto 14px auto;
 	font-size: 100%;
 	text-align: center;
 }
 
 div.intro-content > div.intro-tagline {
 	margin: 0 auto;
-	width: 80%;
 	font-size: 133%;
 	text-align: center;
 }
@@ -713,7 +737,7 @@ div.intro-content > div.intro-tagline {
 
 .host-wrapper {
 	margin: 0 auto;
-	width: 70%;
+	width: 90%;
 	color: #FFF;
 }
 
@@ -728,6 +752,8 @@ div.intro-content > div.intro-tagline {
 .host-wrapper > img.host-photo {
 	float: left;
 	width: 190px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	display: block;
 	line-height: 0;
@@ -737,7 +763,7 @@ div.intro-content > div.intro-tagline {
 .host-wrapper > .host-desc {
 	float: left;
 	margin-left: 16px;
-	font-size: 60%;
+	width: 75%;
 }
 
 /* -----------------------------------------
@@ -757,6 +783,8 @@ div.intro-content > div.intro-tagline {
 
 .speaker img,
 .speaker-pres img {
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	display: block;
 	line-height: 0;
@@ -784,7 +812,7 @@ div.intro-content > div.intro-tagline {
 	text-align: center;
 	padding: 10px;
 	font-style: normal;
-	width: 100%;
+	max-width: 214px;
 	background: rgba(0,0,0,0.7);
 	margin: -40px 0 0 0;
 	z-index: 10;
@@ -819,6 +847,8 @@ div.intro-content > div.intro-tagline {
 .keynote-pres img,
 .artist img,
 .artist-pres img {
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	display: block;
 	line-height: 0;
@@ -857,7 +887,6 @@ div.intro-content > div.intro-tagline {
 	text-align: center;
 	padding: 10px;
 	font-style: normal;
-	width: 100%;
 	background: rgba(0,0,0,0.7);
 	margin: -40px 0 0 0;
 	z-index: 10;
@@ -871,10 +900,6 @@ div.intro-content > div.intro-tagline {
 	margin-bottom: 5px;
 	font-size: 14px;
 	font-weight: bold;
-}
-
-.artist-name {
-	
 }
 
 .artist-datetime {
@@ -957,17 +982,20 @@ div.intro-content > div.intro-tagline {
    VENDORS SECTION
 ----------------------------------------- */
 
-.vendor-list {
+ul.vendor-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-.vendor-list li {
+ul.vendor-list li {
 	margin-bottom: 30px;
+	width: 20%; /* Overridden here for five columns */
 }
 
-.vendor-list li img {
+ul.vendor-list li img {
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	box-shadow: 0 0 16px rgba(0,0,0,0.5);
 }
@@ -1004,12 +1032,13 @@ textarea {
 	font: inherit;
 	padding: 10px 12px;
 	height: auto;
-
 	background: #323232;
 	border: 1px solid #3C3C3C;
 	color: #FFF;
 	box-shadow: inset 0 0 9px 0 rgba(0,0,0,0.21);
 	font-style: italic;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	margin-bottom: 30px;
 }
@@ -1043,6 +1072,8 @@ input[type=submit],
 .btn, .btn:visited,
 .wpcf7 input[type=submit] {
 	padding: 10px 35px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	border: none;
 }

@@ -93,8 +93,27 @@ jQuery(window).on("load", function () {
 		}); // end: $speaker.each()
 	} // end: function initQtipForSpeakers()
 
-	function initQtipForKeynotes(tooltipWidth, tooltipHeight, yPos) {		
-		$keynote.each(function () {
+	function initQtipForKeynotes(tooltipWidth, tooltipHeight, yPos) {
+		$keynote.each(function (idx) {
+			// Keynote speakers are aligned horizontally and thus require
+			// different tooltip positioning depending on the item.
+			// http://qtip2.com/options#position.basic
+			var attrMy, attrAt;
+			switch (idx) {
+				case 0:  // Left Keynote box
+					attrMy = 'right center';
+					attrAt = 'left center';
+					break;
+				case 1:  // Middle Keynote box
+					attrMy = 'top center';
+					attrAt = 'bottom center';
+					break;
+				case 2:  // Right Keynote box
+					attrMy = 'left center';
+					attrAt = 'right center';
+					break;
+				default:
+			}
 			var that = jQuery(this);
 			that.qtip({
 				show: {
@@ -106,8 +125,8 @@ jQuery(window).on("load", function () {
 				},
 				content: jQuery(this).find(".keynote-desc").clone(),
 				position: {
-					my: 'left center',
-					at: 'right center',
+					my: attrMy,
+					at: attrAt,
 					target: that,
 					viewport: jQuery("#keynotes").find(".row"),
 					adjust: {
@@ -143,8 +162,27 @@ jQuery(window).on("load", function () {
 		}); // end: $keynote.each()
 	} // end: function initQtipForKeynotes()
 
-	function initQtipForArtists(tooltipWidth, tooltipHeight, yPos) {		
-		$artist.each(function () {
+	function initQtipForArtists(tooltipWidth, tooltipHeight, yPos) {
+		$artist.each(function (idx) {
+			// Artists are aligned horizontally and thus require
+			// different tooltip positioning depending on the item.
+			// http://qtip2.com/options#position.basic
+			var attrMy, attrAt;
+			switch (idx) {
+				case 0:  // Left Artist box
+					attrMy = 'right center';
+					attrAt = 'left center';
+					break;
+				case 1:  // Middle Artist box
+					attrMy = 'top center';
+					attrAt = 'bottom center';
+					break;
+				case 2:  // Right Artist box
+					attrMy = 'left center';
+					attrAt = 'right center';
+					break;
+				default:
+			}
 			var that = jQuery(this);
 			that.qtip({
 				show: {
@@ -156,8 +194,8 @@ jQuery(window).on("load", function () {
 				},
 				content: jQuery(this).find(".artist-desc").clone(),
 				position: {
-					my: 'left center',
-					at: 'right center',
+					my: attrMy,
+					at: attrAt,
 					target: that,
 					viewport: jQuery("#artists").find(".row"),
 					adjust: {

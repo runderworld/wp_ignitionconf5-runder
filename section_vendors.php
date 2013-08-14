@@ -15,7 +15,7 @@
 						$vendor_url = post_custom('ci_cpt_vendor_url')
 					?>
 	
-					<li class="<?php ci_e_setting('vendors_columns'); ?> columns">
+					<li class="columns">
 						<?php if ( !empty($vendor_url) ) : ?>
 							<a href="<?php echo $vendor_url; ?>" <?php if ( !empty($on_schedule) ) : ?>target="_blank"<?php endif; ?>>
 						<?php endif; ?>
