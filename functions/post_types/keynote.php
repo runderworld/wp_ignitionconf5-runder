@@ -40,20 +40,20 @@ function ci_create_cpt_keynote() {
 endif;
 
 if( !function_exists('ci_add_cpt_keynote_meta') ):
-function ci_add_cpt_keynote_meta(){
+function ci_add_cpt_keynote_meta() {
 	//add_meta_box("ci_cpt_keynote_meta", __('Keynote Details', 'ci_theme'), "ci_add_cpt_keynote_meta_box", "keynote", "normal", "high");
 }
 endif;
 
 if( !function_exists('ci_update_cpt_keynote_meta') ):
-function ci_update_cpt_keynote($post_id){
+function ci_update_cpt_keynote($post_id) {
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return;
 	if (isset($_POST['post_view']) and $_POST['post_view']=='list') return;
 
-	if (isset($_POST['post_type']) && $_POST['post_type'] == "vendor")
+	if (isset($_POST['post_type']) && $_POST['post_type'] == "keynote")
 	{
-		update_post_meta($post_id, "ci_cpt_vendor_url", (isset($_POST["ci_cpt_vendor_url"]) ? $_POST["ci_cpt_vendor_url"] : '') );
-		update_post_meta($post_id, "ci_cpt_vendor_target_blank", (isset($_POST["ci_cpt_vendor_target_blank"]) ? $_POST["ci_cpt_vendor_target_blank"] : '') );
+		//update_post_meta($post_id, "ci_cpt_vendor_url", (isset($_POST["ci_cpt_vendor_url"]) ? $_POST["ci_cpt_vendor_url"] : '') );
+		//update_post_meta($post_id, "ci_cpt_vendor_target_blank", (isset($_POST["ci_cpt_vendor_target_blank"]) ? $_POST["ci_cpt_vendor_target_blank"] : '') );
 	}
 }
 endif;
