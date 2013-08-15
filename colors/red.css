@@ -34,6 +34,5 @@ input[type=submit]:hover,
 .btn:hover,
 .wpcf7 input[type=submit]:hover {
 	background: #ff514f;
+	color: #FFF;
 }
-
-

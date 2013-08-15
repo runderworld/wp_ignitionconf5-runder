@@ -34,8 +34,12 @@
 	<header id="header">
 		<div class="row">
 			<hgroup class="logo columns">
-				<?php ci_e_logo('<h1 style="display: inline-block;">', '</h1>'); ?>
-				<h4 style="display: inline-block; margin: 0px 0px 0px 8px; font-size: 98%; font-style: normal;">Sept. 20th &amp; 21st, 2013</h4>
+				<?php ci_e_logo('<h1 style="float: left;">', '</h1>'); ?>
+				<div style="float: left; margin: 0 0 0 14px; font-style: normal; color: #ccc;">
+					<div style="font-size: 120%; margin: 7px 0; font-weight: 700; text-transform: uppercase;">Leadership Conference</div>
+					<div style="font-size: 90%;">SEPTEMBER 20<sup>th</sup> &amp; 21<sup>st</sup>, 2013</div>
+				</div>
+				<div style="clear: left;"></div>
 			</hgroup>
 
 			<nav id="nav">

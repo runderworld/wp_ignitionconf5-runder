@@ -5,16 +5,15 @@
 			<p>
 				<div style="width:100%; text-align:left;">
 					<iframe src="http://www.eventbrite.com/tickets-external?eid=7636431773&ref=etckt&v=2"
-							frameborder="0" height="214" width="100%" vspace="0" hspace="0"
+							frameborder="0" height="214" width="98%" vspace="0" hspace="0"
 							marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
-					<div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;">
-						<a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/etckt">Online Ticketing</a><span style="color:#ddd;"> for </span><a style="color:#ddd; text-decoration:none;" target="_blank" href="https://anthem2013.eventbrite.com?ref=etckt">Anthem Leadership Conference</a> <span style="color:#ddd;">powered by</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=etckt">Eventbrite</a>
-					</div>
 				</div>
 			</p>
-			<p>
-				<a class="btn register" href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=NBNuH7SDjNJKXlFv/F/0Xw==&cCode=gu6bxUwJSpiBDyiUOfUi2A==" target="_blank">Register for Childcare</a>
-			</p>
+			<div class="childcare">
+				<h2>Childcare</h2>
+				<p style="text-align: center;">Childcare is available on-site during the conference for $5 per child. <strong><u>You MUST register by September 12th</u>.</strong></p>
+				<p style="text-align: center; padding-top: 20px;"><a class="btn" href="https://integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=NBNuH7SDjNJKXlFv/F/0Xw==&cCode=gu6bxUwJSpiBDyiUOfUi2A==" target="_blank">Register for Childcare<img class="extlink" src="<?php echo get_template_directory_uri(); ?>/images/extlink-16x16.png" title="Opens in a new window"></a></p>
+			</div>
 		</div> <!-- .row < #registration -->
 	</section> <!-- #registration -->
 <?php endif; ?>

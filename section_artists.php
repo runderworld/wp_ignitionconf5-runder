@@ -16,7 +16,7 @@
 					</div>
 					<div class="artist-desc">
 						<p class="artist-title"><?php the_title(); ?></p>
-						<p class="artist-datetime"><?php ci_e_setting('perf_date_time'); ?></p>
+						<p class="artist-datetime"><?php echo post_custom('ci_cpt_artist_perf_date_time'); ?></p>
 						<?php the_content(); ?>
 					</div>
 				</article>

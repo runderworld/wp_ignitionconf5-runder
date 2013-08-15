@@ -39,7 +39,7 @@ jQuery(window).on("load", function () {
 	/* -----------------------------------------
 	 Handle Qtip for Speakers/Keynotes/Artists
 	 ----------------------------------------- */
-	var $speaker = jQuery(".speaker");
+	var $speaker = jQuery(".speaker-pres");
 	var $keynote = jQuery(".keynote");
 	var $artist  = jQuery(".artist" );
 
@@ -388,7 +388,7 @@ jQuery(document).ready(function ($) {
 	/* -----------------------------------------
 	 Speakers - Effects Init
 	 ----------------------------------------- */
-	$speaker = $(".speaker, .speaker-pres");
+	$speaker = $(".speaker-pres");
 	$speaker.hover(function () {
 		$(this).find('h3').stop().animate({"opacity": 1}, 300);
 	}, function () {
@@ -398,7 +398,7 @@ jQuery(document).ready(function ($) {
 	/* -----------------------------------------
 	 Keynotes - Effects Init
 	 ----------------------------------------- */
-	$keynote = $(".keynote, .keynote-pres");
+	$keynote = $(".keynote");
 	$keynote.hover(function () {
 		$(this).find('h3').stop().animate({"opacity": 1}, 300);
 	}, function () {
@@ -408,7 +408,7 @@ jQuery(document).ready(function ($) {
 	/* -----------------------------------------
 	 Artists - Effects Init
 	 ----------------------------------------- */
-	$artist = $(".artist, .artist-pres");
+	$artist = $(".artist");
 	$artist.hover(function () {
 		$(this).find('h3').stop().animate({"opacity": 1}, 300);
 	}, function () {

@@ -257,13 +257,35 @@ em > em {
 a, a:visited { text-decoration: none; line-height: inherit; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease;}
 
 .shadow {
-	-webkit-text-shadow:0px 0px 10px #333; /* for chrome */
-	-moz-text-shadow:0px 0px 10px #333; /* for firefox */
-	-o-text-shadow:0px 0px 10px #333; /* for opera */
-	-ms-text-shadow:0px 0px 10px #333; /* for ie 9+ */
-	-khtml-text-shadow:0px 0px 10px #333; /* for KHTML based browser */
-	-text-shadow:0px 0px 10px #333; /* for browsers with native support */
-	text-shadow:0px 0px 10px #333; /* same as above */
+	-webkit-text-shadow: 0px 0px 10px #333; /* for chrome */
+	-moz-text-shadow: 0px 0px 10px #333; /* for firefox */
+	-o-text-shadow: 0px 0px 10px #333; /* for opera */
+	-ms-text-shadow: 0px 0px 10px #333; /* for ie 9+ */
+	-khtml-text-shadow: 0px 0px 10px #333; /* for KHTML based browser */
+	-text-shadow: 0px 0px 10px #333; /* for browsers with native support */
+	text-shadow: 0px 0px 10px #333; /* same as above */
+}
+
+.halo {
+	/* Adapted from .shadow */
+	-webkit-text-shadow: 0px 0px 10px #aaa; /* for chrome */
+	-moz-text-shadow: 0px 0px 10px #aaa; /* for firefox */
+	-o-text-shadow: 0px 0px 10px #aaa; /* for opera */
+	-ms-text-shadow: 0px 0px 10px #aaa; /* for ie 9+ */
+	-khtml-text-shadow: 0px 0px 10px #aaa; /* for KHTML based browser */
+	-text-shadow: 0px 0px 10px #aaa; /* for browsers with native support */
+	text-shadow: 0px 0px 10px #aaa; /* same as above */
+}
+
+.glow {
+	/* Adapted from .shadow */
+	-webkit-text-shadow: 1px 1px 5px #999;
+	-moz-text-shadow: 1px 1px 5px #999;
+	-o-text-shadow: 1px 1px 5px #999;
+	-ms-text-shadow: 1px 1px 5px #999;
+	-khtml-text-shadow: 1px 1px 5px #999;
+	-text-shadow: 1px 1px 5px #999;
+	text-shadow: 1px 1px 5px #999;
 }
 
 /* -----------------------------------------
@@ -286,7 +308,7 @@ body {
    Main Site Navigation
 ----------------------------------------- */
 .alt-nav { display: none; }
-#nav { position: absolute; right: 15px; margin-top: 10px; }
+#nav { position: absolute; right: 15px; margin: 20px 0; }
 #nav ul { margin: 0; padding: 0; list-style: none; }
 #navigation li { position: relative; z-index: 100;}
 #navigation > li { float: left; }
@@ -298,10 +320,10 @@ body {
 #navigation li .sfHover > ul { top: 0; left: 100%; }
 #navigation li li li:hover > ul,
 #navigatoin li li .sfHover > ul{ top: 0; left: 100%; }
-#navigation a, #navigation a:visited { display: block; white-space: nowrap; }
-
 #navigation a, #navigation a:visited {
-	padding: 0 15px;
+	display: block;
+	white-space: nowrap;
+	padding: 0 10px;
 	color: #7d7d7d;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -449,12 +471,12 @@ body {
 ----------------------------------------- */
 
 #page {
-	margin-top: 75px;
+	margin-top: 69px;
 }
 
 #header {
-	padding: 20px 0;
-	background: #242424; /*url(images/pattern.png) repeat-x top;*/
+	padding: 7px 0;
+	background: #242424 url(images/overlay.png) repeat top;
 	position: fixed;
 	width: 100%;
 	z-index: 13000;
@@ -486,7 +508,10 @@ body {
    GENERAL SECTIONS STYLING
 ----------------------------------------- */
 
-#intro,
+#intro {
+	padding: 0 0 100px 0;	
+}
+
 #about,
 #host,
 #speakers,
@@ -496,7 +521,7 @@ body {
 #vendors,
 #contact,
 #registration {
-	padding: 0 0 60px;
+	padding: 0 0 60px 0;
 }
 
 #intro:after,
@@ -661,7 +686,9 @@ div.intro-content {
 }
 
 div.intro-content > div.intro-def {
-	margin: 0 auto;
+	margin: 0 auto 10px auto;
+	padding-bottom: 0 0 50px 0;
+	border-bottom: 1px solid #888;
 	width: 70%;
 	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 }
@@ -686,7 +713,7 @@ div.intro-content > div.intro-def > div.intro-def-type {
 }
 
 div.intro-content > div.intro-def > ol {
-	margin: 8px 0;
+	margin: 8px 0 8px 40px;
 	padding-left: 0;
 	list-style-position: inside;
 }
@@ -694,24 +721,19 @@ div.intro-content > div.intro-def > ol {
 div.intro-content > div.intro-def > ol > li.intro-def-callout {
 	font-size: 130%;
 	font-weight: bold;
-	/* From .shadow */
-	-webkit-text-shadow:0px 0px 10px #aaa; /* for chrome */
-	-moz-text-shadow:0px 0px 10px #aaa; /* for firefox */
-	-o-text-shadow:0px 0px 10px #aaa; /* for opera */
-	-ms-text-shadow:0px 0px 10px #aaa; /* for ie 9+ */
-	-khtml-text-shadow:0px 0px 10px #aaa; /* for KHTML based browser */
-	-text-shadow:0px 0px 10px #aaa; /* for browsers with native support */
-	text-shadow:0px 0px 10px #aaa; /* same as above */
 }
 
 div.intro-content > div.intro-everyone {
-	margin: 24px auto 14px auto;
+	margin: 14px auto;
 	font-size: 100%;
 	text-align: center;
 }
 
 div.intro-content > div.intro-tagline {
 	margin: 0 auto;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #888888;
+	width: 70%;
 	font-size: 133%;
 	text-align: center;
 }
@@ -773,12 +795,12 @@ div.intro-content > div.intro-tagline {
 .speaker {
 	position: relative;
 	margin-bottom: 30px;
-	cursor: help;
 }
 
 .speaker-pres {
 	margin-bottom: 30px;
 	text-align: center;
+	cursor: help;
 }
 
 .speaker img,
@@ -837,16 +859,8 @@ div.intro-content > div.intro-tagline {
 	cursor: help;
 }
 
-.keynote-pres,
-.artist-pres {
-	margin-bottom: 30px;
-	text-align: center;
-}
-
 .keynote img,
-.keynote-pres img,
-.artist img,
-.artist-pres img {
+.artist img {
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
@@ -872,9 +886,7 @@ div.intro-content > div.intro-tagline {
 }
 
 .keynote h3,
-.keynote-pres h3,
-.artist h3,
-.artist-pres h3 {
+.artist h3 {
 	bottom: 0;
 	font-size: 12px;
 	font-weight: 600;
@@ -1007,6 +1019,30 @@ ul.vendor-list li img {
 
 .contact-form {
 	margin-bottom: 40px;
+}
+
+.childcare {
+	color: #fff;
+}
+
+.childcare .btn,
+.childcare .btn:visited {
+	margin: 0 0 0 14px;
+	padding: 10px 35px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.btn > img.extlink {
+	position: relative;
+	right: -7px;
+	top: 2px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	line-height: 0;
+	vertical-align: baseline;
 }
 
 /* -----------------------------------------

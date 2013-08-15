@@ -11,7 +11,7 @@
 
 			<?php if ( $speakers_q->have_posts() ) : while ( $speakers_q->have_posts() ) : $speakers_q->the_post(); ?>
 				<div class="twelve columns p-wrap">
-					<article class="presentation">
+					<article class="speaker presentation">
 						<div class="row">
 							<div class="speaker-pres two columns">
 								<?php the_post_thumbnail('square'); ?>
@@ -21,8 +21,8 @@
 								<p class="speaker-title"><strong><?php the_title(); ?></strong></p>
 								<?php the_content(); ?>
 							</div>
-							<div class="desc nine columns">
-								<h1><em><?php echo post_custom('ci_cpt_speaker_pres_title'), '</em>  with  ', the_title(); ?></h1>
+							<div class="desc nine columns">								
+								<h1><em class="glow"><?php echo post_custom('ci_cpt_speaker_pres_title'), '</em>&nbsp;&nbsp;<span style="color: #aaa; font-size: 70%; font-weight: normal; letter-spacing: normal; font-style: italic;">with</span>&nbsp;&nbsp;<span class="glow" style="text-transform: uppercase;">', the_title(); ?></span></h1>
 								<?php echo wpautop(post_custom('ci_cpt_speaker_pres_desc')); ?>
 							</div>
 						</div>
