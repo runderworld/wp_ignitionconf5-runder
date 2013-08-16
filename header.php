@@ -35,8 +35,8 @@
 		<div class="row">
 			<hgroup class="logo columns">
 				<?php ci_e_logo('<h1 style="float: left;">', '</h1>'); ?>
-				<div style="float: left; margin: 0 0 0 14px; font-style: normal; color: #ccc;">
-					<div style="font-size: 120%; margin: 7px 0; font-weight: 700; text-transform: uppercase;">Leadership Conference</div>
+				<div style="float: left; margin: 0 0 0 14px; font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif; font-style: normal; font-weight: normal; color: #ccc;">
+					<div style="font-size: 120%; margin: 7px 0; text-transform: uppercase;">Leadership Conference</div>
 					<div style="font-size: 90%;">SEPTEMBER 20<sup>th</sup> &amp; 21<sup>st</sup>, 2013</div>
 				</div>
 				<div style="clear: left;"></div>
