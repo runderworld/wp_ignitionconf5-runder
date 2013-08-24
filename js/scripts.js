@@ -54,7 +54,7 @@ jQuery(window).on("load", function () {
 				hide: {
 					event: 'unfocus'
 				},
-				content: jQuery(this).find(".speaker-desc").clone(),
+				content: jQuery(this).parent().find(".speaker-desc").clone(),
 				position: {
 					my: 'left center',
 					at: 'right center',
@@ -81,12 +81,12 @@ jQuery(window).on("load", function () {
 				},
 				events: {
 					visible: function (event, api) {
-						jQuery(this).find(".speaker-desc").mCustomScrollbar();
+						jQuery(this).parent().find(".speaker-desc").mCustomScrollbar();
 						jQuery('.mCustomScrollBox > .mCSB_scrollTools').animate({opacity: 1});
 					},
 					hidden: function (event, api) {
 						jQuery(this).qtip('destroy');
-						jQuery(this).find(".speaker-desc").mCustomScrollbar('destroy');
+						jQuery(this).parent().find(".speaker-desc").mCustomScrollbar('destroy');
 					}
 				}
 			});
@@ -231,45 +231,41 @@ jQuery(window).on("load", function () {
 		}); // end: $artist.each()
 	} // end: function initQtipForArtists()
 
-	$speaker.click(function () {
-		var tooltipWidth = (($speaker.outerWidth()) * 2) - ($speaker.outerWidth() - $speaker.width()) + 2,
+	function doQtipForSpeakers() {
+		var tooltipWidth = (($speaker.outerWidth()) * 3) - ($speaker.outerWidth() - $speaker.width()) + 2,
 				tooltipHeight = $speaker.height() + 2,
 				yPos = jQuery("#header").outerHeight() - 4;
-
 		initQtipForSpeakers(tooltipWidth, tooltipHeight, yPos);
-	});
+	}
 
-	$keynote.click(function () {
+	function doQtipForKeynotes() {
 		var tooltipWidth = (($keynote.outerWidth()) * 2) - ($keynote.outerWidth() - $keynote.width()) + 2,
 				tooltipHeight = $keynote.height() + 2,
 				yPos = jQuery("#header").outerHeight() - 4;
-
 		initQtipForKeynotes(tooltipWidth, tooltipHeight, yPos);
-	});
+	}
 
-	$artist.click(function () {
+	function doQtipForArtists() {
 		var tooltipWidth = (($artist.outerWidth()) * 2) - ($artist.outerWidth() - $artist.width()) + 2,
 				tooltipHeight = $artist.height() + 2,
 				yPos = jQuery("#header").outerHeight() - 4;
-
 		initQtipForArtists(tooltipWidth, tooltipHeight, yPos);
-	});
+	}
+
+	$speaker.click(doQtipForSpeakers);
+
+	$keynote.click(doQtipForKeynotes);
+
+	$artist.click(doQtipForArtists);
 
 	// First handle Speakers
-	var tooltipWidth = (($speaker.outerWidth()) * 2) - ($speaker.outerWidth() - $speaker.width()) + 2,
-			tooltipHeight = $speaker.height() + 2,
-			yPos = jQuery("#header").outerHeight() - 4;
-	initQtipForSpeakers(tooltipWidth, tooltipHeight, yPos);
+	doQtipForSpeakers();
 
 	// Now do the same for Keynotes
-	tooltipWidth = (($keynote.outerWidth()) * 2) - ($keynote.outerWidth() - $keynote.width()) + 2;
-	tooltipHeight = $keynote.height() + 2;
-	initQtipForKeynotes(tooltipWidth, tooltipHeight, yPos);
+	doQtipForKeynotes();
 
 	// Now do the same for Artists
-	tooltipWidth = (($artist.outerWidth()) * 2) - ($artist.outerWidth() - $artist.width()) + 2;
-	tooltipHeight = $artist.height() + 2;
-	initQtipForArtists(tooltipWidth, tooltipHeight, yPos);
+	doQtipForArtists();
 
 	/* -----------------------------------------
 	 Responsive Menus Init with jPanelMenu
