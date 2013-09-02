@@ -1,3 +1,6 @@
+<?php
+	$THE_META_TITLE = 'An annual leadership conference held on September 20th &amp; 21st, 2013, at the Rock Church campus in Point Loma. It will leave you energized, enlightened and ready to embrace the life to which you have been entrusted and the journey to which you’ve been called. Whether you are a leader within the church or you lead a team outside of the church — this conference is for you. You can expect to unpack the nuts and bolts of leadership, up close and personal with Bob Goff, Miles McPherson, Tommy Moseley, Marc Millan and many more!';
+?> 
 <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
@@ -6,9 +9,20 @@
   ================================================== -->
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-	<!-- Basic Page Needs
+	<!-- Content type
   ================================================== -->
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta name="description" content="<? php echo $THE_META_TITLE ?>">
+	<meta name="keywords" content="Anthem Conference, Leadership Conference, Church Leadership, Rock Church, Bob Goff, Miles McPherson, Tommy Moseley, Marc Millan">
+
+	<!-- OGP directives for Facebook scraper
+  ================================================== -->
+	<meta property="og:title" content="ANTHEM Leadership Conference 2013">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://www.anthemconference.com/">
+	<meta property="og:image" content="http://www.anthemconference.com/wp-content/uploads/ogp_anthem_leadership_conference.jpg">
+	<meta property="og:description" content="<? php echo $THE_META_TITLE ?>">
+
 	<title><?php ci_e_title(); ?></title>
 
 	<!-- Mobile Specific Metas
