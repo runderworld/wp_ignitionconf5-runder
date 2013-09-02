@@ -21,7 +21,7 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="http://www.anthemconference.com/">
 	<meta property="og:image" content="http://www.anthemconference.com/wp-content/uploads/ogp_anthem_leadership_conference.jpg">
-	<meta property="og:description" content="<? php echo $THE_META_TITLE ?>">
+	<meta property="og:description" content="<?php echo $THE_META_TITLE ?>">
 
 	<title><?php ci_e_title(); ?></title>
 
