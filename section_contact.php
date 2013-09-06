@@ -13,7 +13,7 @@
 			
 			<div id="contact-questions">
 				<h2>Questions?</h2>
-				<p style="text-align: center;">Please contact <a href="mailto:kimberly.jenson@sdrock.com">Kimberly Jenson</a> at <a href="http://www.sdrock.com" target="_blank">Rock Church</a> with any questions, comments or concerns.</p>
+				<p style="text-align: center;">Please contact Kimberly Jenson (<a href="mailto:kimberly.jenson@sdrock.com">kimberly.jenson@sdrock.com</a>) with any questions or comments.</p>
 			</div>
 		</div> <!-- .row < #contact -->
 	</section> <!-- #contact -->
