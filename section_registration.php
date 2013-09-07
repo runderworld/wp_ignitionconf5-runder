@@ -1,7 +1,11 @@
 <?php if ( !ci_setting('disable_registration_button') ) : ?>
 	<section id="registration">
 		<div class="row">
-			<h1 class="section-title"><span>Registration</span></h1>
+			<div id="reg-register">
+				<h1 class="section-title"><span>Registration</span></h1>
+				<p>FRIDAY: Check-in and registration opens at 6pm in the Rock Park. Event is from 7pm to 9pm.</p>
+				<p>SATURDAY: Check-in and registration opens at 7:30am in the Rock Park. Event is from 9am to 5pm.</p>
+			</div>
 			
 			<iframe src="http://www.eventbrite.com/tickets-external?eid=7636431773&ref=etckt&v=2"
 					frameborder="0" height="214" width="98%" vspace="0" hspace="0"

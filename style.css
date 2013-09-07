@@ -1023,6 +1023,14 @@ ul.vendor-list li img {
 	color: #fff;
 }
 
+#registration div#reg-register {
+	text-align: center;
+}
+
+#registration div#reg-register p {
+	font-size: 20px;	
+}
+
 #contact div#contact-location,
 #contact div#contact-questions,
 #registration div#reg-childcare {
