@@ -6,7 +6,6 @@
 			<iframe src="http://www.eventbrite.com/tickets-external?eid=7636431773&ref=etckt&v=2"
 					frameborder="0" height="214" width="98%" vspace="0" hspace="0"
 					marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
-					
 			<div id="reg-childcare">
 				<h1 class="section-title"><span>Childcare</span></h1>
 				<p>Childcare is available on-site during the conference for $5 per child. <strong><u>You MUST register by September 12th</u>.</strong></p>
