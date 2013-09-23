@@ -7,7 +7,7 @@
 				<p>SATURDAY: Check-in and registration opens at 7:30am in the Rock Park. Event is from 9am to 5pm.</p>
 			</div>
 			
-			<iframe src="http://www.eventbrite.com/tickets-external?eid=7636431773&ref=etckt&v=2"
+			<iframe src="http://www.eventbrite.com/tickets-external?eid=8438797671&ref=etckt&v=2"
 					frameborder="0" height="214" width="98%" vspace="0" hspace="0"
 					marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
 			
